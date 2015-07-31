@@ -1,0 +1,21 @@
+video = record {
+    hasQuestions: bool;
+    downloadUrls: map<string, string>;
+    url: string;
+    duration: i32;
+    authors: set<string>;
+    title: string;
+    videoDescription: string;
+    type: content_type;
+} deriving (eq)
+
+content_type = enum {
+    video;
+    article;
+    exercise;
+}
+
+video_fetcher = interface +c {
+    fetchVideos(): list<video>;
+    static createFetcher(): video_fetcher;
+}
