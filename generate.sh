@@ -18,7 +18,7 @@ mkdir -p "$GENERATED_FOLDER"
    --java-out "$JAVA_FOLDER" \
    --java-package org.khanacademy.core.shared \
    --java-cpp-exception RuntimeException \
-   --java-nonnull-annotation "javax.annotation.Nonnull" \
+   --java-nullable-annotation "javax.annotation.Nullable" \
    --ident-java-field mFooBar \
    --cpp-namespace Khan \
    --cpp-out "$CPP_FOLDER" \
