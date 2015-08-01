@@ -24,6 +24,7 @@ mkdir -p "$GENERATED_FOLDER"
    --cpp-out "$CPP_FOLDER" \
    --jni-out "$JNI_FOLDER" \
    --ident-jni-class NativeFooBar \
+   --ident-jni-file NativeFooBar \
    --objc-out "$OBJC_FOLDER" \
    --objcpp-out "$OBJC_FOLDER" \
    --objc-type-prefix KHA \
