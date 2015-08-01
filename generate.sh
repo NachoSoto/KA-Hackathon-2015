@@ -4,10 +4,10 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 DJINNI="$DIR/../djinni/src/run"
 
 GENERATED_FOLDER="$DIR/generated"
-CPP_FOLDER="$GENERATED_FOLDER/cpp"
+CPP_FOLDER="$GENERATED_FOLDER/cpp/core"
 OBJC_FOLDER="$GENERATED_FOLDER/objc"
-JAVA_FOLDER="$GENERATED_FOLDER/java"
-JNI_FOLDER="$GENERATED_FOLDER/jni"
+JAVA_FOLDER="$GENERATED_FOLDER/java/org/khanacademy/core/shared"
+JNI_FOLDER="$GENERATED_FOLDER/cpp/jni"
 
 IDL_FILE="$DIR/records.idl"
 
