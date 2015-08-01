@@ -4,7 +4,7 @@
 
 namespace Khan {
 namespace Core {
-	class VideoFetcherImpl : public VideoFetcher {
+	class VideoFetcherImpl final : public VideoFetcher {
 	public:
 		VideoFetcherImpl();
 
