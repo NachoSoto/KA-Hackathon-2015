@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/NachoSoto/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/NachoSoto/Development/khan/shared-core/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0-72dc33e2bc1a29f353d6fba5615515d3b81ebd52.jar" />
+    </item>
+
+</items>

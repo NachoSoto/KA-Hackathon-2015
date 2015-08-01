@@ -1,0 +1,62 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion = 22
+        buildToolsVersion = "22.0.1"
+
+        defaultConfig.with {
+            applicationId = "org.khanacademy.jnitest"
+            minSdkVersion.apiLevel = 15
+            targetSdkVersion.apiLevel = 22
+            versionCode = 1
+            versionName = "1.0"
+        }
+    }
+    android.buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles += file('proguard-rules.pro')
+        }
+    }
+
+    android.ndk {
+        moduleName = "sharedcore"
+
+        stl = "gnustl_static"
+
+        cppFlags  += "-I${file("../../../djinni/support-lib/jni")}".toString()
+        cppFlags  += "-I${file("../../generated/cpp/core")}".toString()
+        cppFlags  += "-I${file("../../generated/cpp")}".toString()
+        cppFlags  += "-I${file("../../core/src")}".toString()
+
+        cppFlags  += "-std=c++11"
+        cppFlags  += "-Werror"
+        cppFlags  += "-frtti"
+        cppFlags  += "-fexceptions"
+    }
+
+    android.sources {
+        main {
+            java {
+                source {
+                    srcDirs 'src',
+                            '../../generated/java'
+                }
+            }
+
+            jni {
+                source {
+                    srcDirs '../../core',
+                            '../../generated/cpp',
+                            '../../../djinni/support-lib/jni'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+}
