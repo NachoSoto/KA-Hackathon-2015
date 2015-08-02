@@ -6,7 +6,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
+
+import org.khanacademy.core.shared.Video;
 import org.khanacademy.core.shared.VideoFetcher;
+
+import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends Activity {
 
@@ -36,9 +44,22 @@ public class MainActivity extends Activity {
         super.onStart();
 
         final VideoFetcher fetcher = VideoFetcher.createFetcher();
+        final List<Video> videos = fetcher.fetchVideos();
 
-        textView.setText(fetcher.fetchVideos().toString());
+        textView.setText(getVideoTitles(videos).toString());
     }
+
+
+    private static List<String> getVideoTitles(List<Video> videos) {
+        return Lists.transform(videos, new Function<Video, String>() {
+            @Nullable
+            @Override
+            public String apply(Video input) {
+                return input.getTitle();
+            }
+        });
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
